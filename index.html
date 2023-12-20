@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar para WhatsApp</title>
+</head>
+<body>
+
+  <h2>Produtos Escolhidos</h2>
+  <ul>
+    <li>Roupa 1</li>
+    <li>Roupa 2</li>
+  </ul>
+
+  <button onclick="compartilharWhatsApp()">Enviar para WhatsApp</button>
+
+  <script>
+    function compartilharWhatsApp() {
+      const produtosEscolhidos = "Produtos escolhidos:\n- Roupa 1\n- Roupa 2";
+      const numeroLoja = "5584988716812"; // Substitua pelo número da loja
+
+      const url = `https://api.whatsapp.com/send?phone=${numeroLoja}&text=${encodeURIComponent(produtosEscolhidos)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
